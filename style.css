@@ -360,8 +360,8 @@
     }
 
     .avatar {
-      width: 64px;
-      height: 64px;
+      width: 100px;
+      height: 100px;
       border-radius: 14px;
       background: linear-gradient(150deg, #2a3560, #171e35);
       border: 1px solid var(--line);
@@ -373,6 +373,9 @@
       font-weight: 700;
       color: var(--amber);
       margin-bottom: 16px;
+    }
+    .avatar img{
+      border-radius: 14px;
     }
 
     .status-name {
