@@ -601,10 +601,9 @@ header.nav {
   gap: 28px;
 }
 
-/* Each category becomes a card in the grid */
 #stack .stack-grid {
-  display: block;               /* remove the old grid */
-  margin: 0;                    /* remove bottom margin */
+  display: block;
+  margin: 0;
   background: var(--ink-2);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -617,7 +616,6 @@ header.nav {
   transform: translateY(-3px);
 }
 
-/* The inner .stack-card is no longer needed as a separate container */
 #stack .stack-card {
   background: transparent;
   border: none;
@@ -626,10 +624,10 @@ header.nav {
   box-shadow: none;
 }
 
-/* Keep your existing tag & title styles */
 .mr-3 {
   margin-right: 10px;
 }
+
 .stack-title {
   margin-bottom: 15px;
   font-family: var(--disp);
@@ -637,6 +635,7 @@ header.nav {
   font-weight: 600;
   color: var(--paper);
 }
+
 .stack-tag {
   font-family: var(--mono);
   font-size: 0.68rem;
@@ -650,14 +649,14 @@ header.nav {
   background: var(--ink-3);
   transition: border-color 0.2s, color 0.2s;
 }
+
 .stack-tag:hover {
   border-color: var(--teal);
   color: var(--paper);
 }
 
-/* Responsive: single column on smaller screens */
 @media (max-width: 760px) {
-  #stack .wrap {
+  #stack .stack-list-wrap {
     grid-template-columns: 1fr;
     gap: 20px;
   }
