@@ -487,6 +487,36 @@ header.nav {
   width: 16px;
   height: 16px;
 }
+.github {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  transition: border-color 0.2s, color 0.2s;
+  transform-origin: center center; /* bell‑like pivot at the top */
+}
+
+.github svg {
+  width: 16px;
+  height: 16px;
+}
+
+.github:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+  animation: bell-shake 0.5s ease-in-out;
+}
+
+@keyframes bell-shake {
+  0%, 100% { transform: rotate(0deg); }
+  10%, 30%, 50%, 70%, 90% { transform: rotate(-6deg); }
+  20%, 40%, 60%, 80% { transform: rotate(6deg); }
+}
+
 
 @media (max-width: 860px) {
   .hero-grid {
