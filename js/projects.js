@@ -1,10 +1,10 @@
 // ---- project data ----
 const projects = [
   {
-    title: "Human Resource Management System",
+    title: "Human Resource Information System",
     tag: "Web Application",
     desc: "A comprehensive HR management platform built with ReactJS, designed to streamline employee data management and HR processes.",
-    stack: ["ReactJS", "JavaScript", "Font Awesome", "Bootstrap"],
+    stack: ["ReactJS", "JavaScript", "Font Awesome", "Bootstrap", "Axios"],
     icon: '<i class="bi bi-person-bounding-box"></i>',
     attachments: [
       {
@@ -15,30 +15,30 @@ const projects = [
     ]
   },
   {
-    title: "Titan's Watches",
-    tag: "Static Site",
-    desc: "A static product showcase site built with hand-written HTML and CSS, focused on clean presentation over a lightweight footprint.",
-    stack: ["HTML", "CSS"],
-    icon: '<circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.8" fill="none"/>',
+    title: "Learning Management System",
+    tag: "Web Application",
+    desc: "A robust learning management system built with ReactJS, providing a seamless platform for online education and training.",
+    stack: ["ReactJS", "JavaScript", "Font Awesome", "Bootstrap", "Axios"],
+    icon: '<i class="bi bi-journal-bookmark"></i>',
     attachments: [
       {
         type: "image",
-        src: "images/titan-watches.jpg",
-        alt: "Titan's Watches"
+        src: "/image/projects/LMS.png",
+        alt: "Learning Management System"
       }
     ]
   },
   {
-    title: "Benison Management System",
-    tag: "ASP.NET Web Application",
-    desc: "A straightforward CRUD application built for inserting, updating, and deleting records efficiently and reliably.",
-    stack: ["C#", "ASP.NET", "MSSQL"],
-    icon: '<rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="1.8"/>',
+    title: "School Attendance Monitoring System",
+    tag: "Web Application",
+    desc: "A web-based attendance monitoring system built with ReactJS, designed to efficiently track and manage student attendance records.",
+    stack: ["ReactJS", "JavaScript", "Font Awesome", "Bootstrap", "Axios"],
+    icon: '<i class="bi bi-people"></i>',
     attachments: [
       {
         type: "image",
-        src: "images/benison-management.jpg",
-        alt: "Benison Management System"
+        src: "/image/projects/SAS.png",
+        alt: "School Attendance Monitoring System"
       }
     ]
   },
