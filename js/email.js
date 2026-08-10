@@ -1,3 +1,7 @@
+(function() {
+    emailjs.init("50tquHhL0mvVBmoZl");
+})();
+
 // Contact form function
 
 // Initialize EmailJS with your public key

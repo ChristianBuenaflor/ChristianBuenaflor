@@ -1,8 +1,3 @@
-(function() {
-    emailjs.init("50tquHhL0mvVBmoZl");
-})();
-
-
 // ---- mobile nav ----
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
@@ -16,7 +11,7 @@ navLinks
 // ---- typing effect ----
 const typedEl = document.getElementById("typed");
 const lines = [
-  "> initializing developer_profile...",
+  "> initializing my_profile...",
   "> stack: WordPress, ASP.NET, C#, MSSQL",
   "> status: accepting new projects",
 ];
