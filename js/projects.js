@@ -46,12 +46,14 @@ const projects = [
     title: "Baptism and Birthday Celebration Website",
     tag: "Static Website",
     desc: "A static website for organizing and promoting baptism and birthday celebrations.",
-    stack: ["HTML", "CSS", "JavaScript"],
+    stack: ["ReactJS", "JavaScript"],
     icon: '<i class="bi bi-book"></i>',
     attachments: [
       {
-        src: "",
-        url: "https://christianbuenaflor.github.io/BaptismDay/",
+        type: "image",
+        src: "/image/projects/BaptismDay.png",
+        alt: "Baptism and Birthday Celebration Website",
+        url: "https://christianbuenaflor.github.io/BaptismDay",
       }
     ]
   },
@@ -113,22 +115,29 @@ function openModal(i) {
         `;
       }
 
-      if (a.url && a.url.trim() !== "") {
-        return `
-          <a
-            href="${a.url}"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="modal-attachment-url"
-          >
-            ${a.url}
-          </a>
-        `;
-      }
-
       return "";
     })
     .join("");
+
+  // Check if the project has a URL
+  const projectUrl = p.attachments.find(
+    (a) => a.url && a.url.trim() !== ""
+  )?.url;
+
+  // Only show Visit button when URL exists
+  const visitButton = projectUrl
+    ? `
+      <a
+        href="${projectUrl}"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="modal-visit"
+      >
+        Visit
+        <i class="bi bi-box-arrow-up-right"></i>
+      </a>
+    `
+    : "";
 
   modalBox.innerHTML = `
     <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
@@ -139,17 +148,29 @@ function openModal(i) {
 
     <p>${p.desc}</p>
 
-    <div class="modal-stack">
-      ${p.stack.map((s) => `<span class="tag">${s}</span>`).join("")}
+    <div class="modal-actions">
+      <div class="modal-stack">
+        ${p.stack
+          .map((s) => `<span class="tag">${s}</span>`)
+          .join("")}
+      </div>
+
+      ${visitButton}
     </div>
 
     <hr class="modal-hr">
 
-    <div class="modal-attachments">
-      <div class="modal-attachment-card">
-        ${attachments}
-      </div>
-    </div>
+    ${
+      attachments
+        ? `
+          <div class="modal-attachments">
+            <div class="modal-attachment-card">
+              ${attachments}
+            </div>
+          </div>
+        `
+        : ""
+    }
   `;
 
   overlay.classList.add("open");

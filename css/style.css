@@ -922,6 +922,43 @@ header.nav {
   flex-wrap: wrap;
   margin-top: 18px;
 }
+.modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.modal-actions .modal-stack {
+  margin-top: 0;
+  flex: 1;
+}
+
+.modal-visit {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.modal-visit i {
+  font-size: 0.8rem;
+}
+
+.modal-visit:hover {
+  transform: translateY(-1px);
+}
 
 .modal-hr {
   border: 0;
