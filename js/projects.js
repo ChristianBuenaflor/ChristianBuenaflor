@@ -43,43 +43,42 @@ const projects = [
     ]
   },
   {
-    title: "PITO Inventory & Service Management System",
-    tag: "ASP.NET Web Application",
-    desc: "A system for the Provincial Information Technology Office, providing direct client service and technical support for fast, efficient computer repair and inventory tracking.",
-    stack: ["C#", "ASP.NET", "MSSQL"],
-    icon: '<path d="M3 7l9-4 9 4-9 4-9-4z" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M3 7v10l9 4 9-4V7" stroke="currentColor" stroke-width="1.8" fill="none"/>',
+    title: "Baptism and Birthday Celebration Website",
+    tag: "Static Website",
+    desc: "A static website for organizing and promoting baptism and birthday celebrations.",
+    stack: ["HTML", "CSS", "JavaScript"],
+    icon: '<i class="bi bi-book"></i>',
     attachments: [
       {
-        type: "image",
-        src: "images/pito-inventory.jpg",
-        alt: "PITO Inventory & Service Management System"
+        src: "",
+        url: "https://christianbuenaflor.github.io/BaptismDay/",
       }
     ]
   },
   {
-    title: "NROTC Record and Monitoring System",
-    tag: "ASP.NET Web Application",
-    desc: "A record-keeping and monitoring platform built to track member data accurately across a structured program.",
-    stack: ["C#", "ASP.NET", "MSSQL"],
-    icon: '<path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" fill="none"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8" fill="none"/>',
+    title: "School File Repository System",
+    tag: "Web Application",
+    desc: "A web-based file repository system built with ReactJS, designed to facilitate secure storage and management of school-related files and documents.",
+    stack: ["ReactJS", "JavaScript", "Font Awesome", "Bootstrap", "Axios"],
+    icon: '<i class="bi bi-folder"></i>',
     attachments: [
       {
         type: "image",
-        src: "images/nrotc-record.jpg",
-        alt: "NROTC Record and Monitoring System"
+        src: "/image/projects/SFRS.png",
+        alt: "School File Repository System"
       }
     ]
   },
   {
     title: "School Web Design Template",
     tag: "WordPress · Divi",
-    desc: "A static school website template built on WordPress using the Divi theme, designed for easy content updates by non-technical staff.",
+    desc: "A professional and responsive school web design template built using WordPress and the Divi theme, providing an attractive online presence for educational institutions.",
     stack: ["WordPress", "Divi"],
-    icon: '<path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="1.8" fill="none"/>',
+    icon: '<i class="bi bi-patch-check"></i>',
     attachments: [
       {
         type: "image",
-        src: "images/school-template.jpg",
+        src: "/image/projects/WordPressSchoolFighting.png",
         alt: "School Web Design Template"
       }
     ]
@@ -105,31 +104,74 @@ const overlay = document.getElementById("modalOverlay");
 const modalBox = document.getElementById("modalBox");
 function openModal(i) {
   const p = projects[i];
+
+  const attachments = p.attachments
+    .map((a) => {
+      if (a.src && a.src.trim() !== "") {
+        return `
+          <img src="${a.src}" alt="${a.alt || ""}" />
+        `;
+      }
+
+      if (a.url && a.url.trim() !== "") {
+        return `
+          <a
+            href="${a.url}"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="modal-attachment-url"
+          >
+            ${a.url}
+          </a>
+        `;
+      }
+
+      return "";
+    })
+    .join("");
+
   modalBox.innerHTML = `
-      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
-      <div class="modal-tag">${p.tag}</div>
-      <h4>${p.title}</h4>
-      <p>${p.desc}</p>
-      <div class="modal-stack">${p.stack.map((s) => `<span class="tag">${s}</span>`).join("")}</div>
-      <hr class="modal-hr"/>
-      <div class="modal-attachments">
+    <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+
+    <div class="modal-tag">${p.tag}</div>
+
+    <h4>${p.title}</h4>
+
+    <p>${p.desc}</p>
+
+    <div class="modal-stack">
+      ${p.stack.map((s) => `<span class="tag">${s}</span>`).join("")}
+    </div>
+
+    <hr class="modal-hr">
+
+    <div class="modal-attachments">
       <div class="modal-attachment-card">
-      ${p.attachments.map((a) => `<img src="${a.src}" alt="${a.alt}" />`).join("")}
+        ${attachments}
       </div>
-      
-      </div>
-    `;
+    </div>
+  `;
+
   overlay.classList.add("open");
-  document.getElementById("modalClose").addEventListener("click", closeModal);
+
+  document
+    .getElementById("modalClose")
+    .addEventListener("click", closeModal);
 }
 function closeModal() {
   overlay.classList.remove("open");
 }
+
 overlay.addEventListener("click", (e) => {
-  if (e.target === overlay) closeModal();
+  if (e.target === overlay) {
+    closeModal();
+  }
 });
+
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") closeModal();
+  if (e.key === "Escape") {
+    closeModal();
+  }
 });
 
 

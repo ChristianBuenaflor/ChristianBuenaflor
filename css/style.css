@@ -16,14 +16,52 @@
   --mono: "JetBrains Mono", monospace;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* =========================================
+   MODERN DARK SCROLLBAR
+   ========================================= */
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
 }
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #0D1120;
+    border-radius: 10px;
+}
+
+/* Scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        180deg,
+        #aeb6c8 0%,
+        #8f9bb2 100%
+    );
+    border-radius: 999px;
+    border: 2px solid #0D1120;
+    min-height: 60px;
+}
+
+/* Hover */
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+        180deg,
+        #c7cede 0%,
+        #aeb8cc 100%
+    );
+}
+
+/* Active / dragging */
+::-webkit-scrollbar-thumb:active {
+    background: #d5dbea;
+}
+
 
 html {
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color:#aeb6c8 #0D1120;
 }
 
 body {
@@ -908,6 +946,33 @@ header.nav {
 }
 
 /* ============================================================
+   MODAL SCROLLBAR
+   ============================================================ */
+
+
+.modal-box {
+  scrollbar-width: thin;
+  scrollbar-color: #aeb6c8 transparent;
+}
+
+.modal-box::-webkit-scrollbar {
+  width: 5px;
+}
+
+.modal-box::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal-box::-webkit-scrollbar-thumb {
+  background: #aeb6c8;
+  border-radius: 999px;
+}
+
+.modal-box::-webkit-scrollbar-thumb:hover {
+  background: #c5ccda;
+}
+
+/* ============================================================
    CONTACT
    ============================================================ */
 .contact-grid {
@@ -976,20 +1041,30 @@ header.nav {
 .form-field input,
 .form-field textarea {
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+
   background: var(--ink-2);
   border: 1px solid var(--line);
   border-radius: 10px;
+
   padding: 13px 14px;
+
   color: var(--paper);
   font-family: var(--body);
   font-size: 0.94rem;
-  transition: border-color 0.2s;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
 .form-field input:focus,
 .form-field textarea:focus {
   border-color: var(--amber);
   outline: none;
+  box-shadow: 0 0 0 2px rgba(232, 169, 68, 0.08);
 }
 
 .form-field textarea {
