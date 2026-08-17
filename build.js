@@ -94,6 +94,7 @@ async function processDirectory(directory) {
     if (
       entry.name === "node_modules" ||
       entry.name === "dist" ||
+      entry.name === ".vercel" ||
       entry.name === ".git" ||
       entry.name === "build.js" ||
       entry.name === "package.json" ||
