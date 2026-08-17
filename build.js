@@ -95,7 +95,9 @@ async function processDirectory(directory) {
       entry.name === "node_modules" ||
       entry.name === "dist" ||
       entry.name === ".git" ||
-      entry.name === "build.js"
+      entry.name === "build.js" ||
+      entry.name === "package.json" ||
+      entry.name === "package-lock.json"
     ) {
       continue;
     }
