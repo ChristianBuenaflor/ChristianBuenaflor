@@ -3,13 +3,8 @@
 
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-K2Z4WE1HFQ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+  <script type="text/javascript" src="/js/analytics/gtag.js"></script>
 
-    gtag('config', 'G-K2Z4WE1HFQ');
-  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Christian Buenaflor | WordPress &amp; ASP.NET Developer</title>
@@ -37,9 +32,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
-    rel="stylesheet">
+ <link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+  rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css" />
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
@@ -86,7 +81,14 @@
 
   <header class="nav">
     <div class="nav-inner">
-      <a href="#home" class="brand"><span class="dot">CB</span> Buenaflor</a>
+
+      <!-- Brand -->
+      <a href="#home" class="brand">
+        <span class="dot">CB</span>
+        <span>Buenaflor</span>
+      </a>
+
+      <!-- Navigation -->
       <nav class="nav-links" id="navLinks">
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -95,16 +97,44 @@
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
-      <div style="display:flex; align-items:center;  gap:16px;">
-        <a href="#contact" class="nav-cta">Let's talk →</a>
-        <a class="github" href="#github" rel="noopener" aria-label="GitHub">
+
+      <!-- Right side -->
+      <div class="nav-actions">
+
+        <!-- Let's Talk -->
+        <a href="#contact" class="nav-cta">
+          Let's talk →
+        </a>
+
+        <!-- Theme Toggle -->
+        <label class="theme-switch" aria-label="Toggle dark and light mode">
+          <input type="checkbox" id="themeToggle">
+          <span class="slider">
+            <span class="icon sun">
+              <i class="bi bi-sun-fill"></i>
+            </span>
+
+            <span class="icon moon">
+              <i class="bi bi-moon-fill"></i>
+            </span>
+          </span>
+        </label>
+        <!-- GitHub -->
+        <a class="github" href="https://github.com/ChristianBuenaflor" target="_blank" rel="noopener noreferrer"
+          aria-label="GitHub">
           <svg viewBox="0 0 24 24" fill="currentColor">
             <path
               d="M12 .5C5.37.5 0 5.78 0 12.292c0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.725-1.335-1.725-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.215 1.838 1.215 1.07 1.803 2.809 1.282 3.495.981.108-.763.417-1.282.76-1.577-2.665-.295-5.466-1.309-5.466-5.827 0-1.287.465-2.339 1.235-3.164-.135-.298-.54-1.497.105-3.121 0 0 1.005-.316 3.3 1.209a11.6 11.6 0 0 1 3-.405c1.02.005 2.045.138 3 .405 2.28-1.525 3.285-1.209 3.285-1.209.645 1.624.24 2.823.12 3.121.765.825 1.23 1.877 1.23 3.164 0 4.53-2.805 5.527-5.475 5.817.42.354.81 1.077.81 2.175 0 1.57-.015 2.837-.015 3.223 0 .315.21.69.825.57C20.565 21.92 24 17.5 24 12.292 24 5.78 18.627.5 12 .5z" />
           </svg>
         </a>
-        <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+
+        <!-- Mobile menu -->
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Toggle menu">
+          ☰
+        </button>
+
       </div>
+
     </div>
   </header>
 
@@ -533,24 +563,9 @@
       }
     );
   </script>
- <!--Start of Conferbot Script-->
-<script type="text/javascript">
-  (function (d, s, id) {
-    var js, el = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s);
-    js.async = true;
-    js.src = 'https://cdn.conferbot.com/dist/v1/widget.min.js';
-    js.id = id;
-    js.charset = 'UTF-8';
-    el.parentNode.insertBefore(js, el);
-    js.onload = function () {
-      var w = window.ConferbotWidget("6a874d5008866ae95fc7a55c", "live_chat");
-    };
-    
-  })(document, 'script', 'conferbot-js');
-</script>
-<!--End of Conferbot Script-->
+  <!--Start of Conferbot Script-->
+  <script type="text/javascript" src="/js/chatbot.js"></script>
+  <!--End of Conferbot Script-->
 </body>
 
 </html>

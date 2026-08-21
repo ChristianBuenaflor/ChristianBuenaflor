@@ -61,4 +61,46 @@ const io = new IntersectionObserver(
 document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
 
+/* ============================================================
+   DARK / LIGHT MODE
+   ============================================================ */
+
+(function () {
+  const themeToggle = document.getElementById("themeToggle");
+
+  if (!themeToggle) return;
+
+  const savedTheme = localStorage.getItem("portfolio-theme");
+
+  if (savedTheme === "light") {
+    document.body.classList.add("light-mode");
+    themeToggle.checked = true;
+  } else {
+    document.body.classList.remove("light-mode");
+    themeToggle.checked = false;
+  }
+
+  themeToggle.addEventListener("change", function () {
+
+    if (this.checked) {
+      document.body.classList.add("light-mode");
+
+      localStorage.setItem(
+        "portfolio-theme",
+        "light"
+      );
+
+    } else {
+      document.body.classList.remove("light-mode");
+
+      localStorage.setItem(
+        "portfolio-theme",
+        "dark"
+      );
+    }
+
+  });
+
+})();
+
 
